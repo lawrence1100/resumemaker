@@ -782,7 +782,7 @@ function ResumeClassic({ data }) {
       {d.summary && (
         <div className="classic-section">
           <div className="classic-section-title">Professional Summary</div>
-          <p style={{ fontSize: '0.88rem', lineHeight: '1.7', color: '#444' }}>{d.summary}</p>
+          <p style={{fontSize:'0.88rem',lineHeight:'1.7',color:'#444'}}>{d.summary}</p>
         </div>
       )}
       {d.experience.length > 0 && (
@@ -863,7 +863,7 @@ function ResumeModern({ data }) {
             {d.skills.map((s, i) => (
               <div className="modern-skill-bar" key={i}>
                 <div className="modern-skill-name">{s}</div>
-                <div className="modern-skill-track"><div className="modern-skill-fill" style={{ width: `${70 + Math.random() * 30}%` }}></div></div>
+                <div className="modern-skill-track"><div className="modern-skill-fill" style={{width:`${70+Math.random()*30}%`}}></div></div>
               </div>
             ))}
           </div>
@@ -873,7 +873,7 @@ function ResumeModern({ data }) {
         {d.summary && (
           <div className="modern-section">
             <div className="modern-section-title">About Me</div>
-            <p style={{ fontSize: '0.85rem', lineHeight: '1.7', color: '#555' }}>{d.summary}</p>
+            <p style={{fontSize:'0.85rem',lineHeight:'1.7',color:'#555'}}>{d.summary}</p>
           </div>
         )}
         {d.experience.length > 0 && (
@@ -933,7 +933,7 @@ function ResumeMinimal({ data }) {
       <div className="minimal-header">
         <div className="minimal-name">
           {d.personal.name ? (
-            <>{d.personal.name.split(' ').slice(0, -1).join(' ')} <strong>{d.personal.name.split(' ').slice(-1)}</strong></>
+            <>{d.personal.name.split(' ').slice(0,-1).join(' ')} <strong>{d.personal.name.split(' ').slice(-1)}</strong></>
           ) : <strong>Your Name</strong>}
         </div>
         <div className="minimal-divider"></div>
@@ -947,7 +947,7 @@ function ResumeMinimal({ data }) {
       {d.summary && (
         <div className="minimal-section">
           <div className="minimal-section-title">Summary</div>
-          <p style={{ fontSize: '0.88rem', lineHeight: '1.7', color: '#555' }}>{d.summary}</p>
+          <p style={{fontSize:'0.88rem',lineHeight:'1.7',color:'#555'}}>{d.summary}</p>
         </div>
       )}
       {d.experience.length > 0 && (
@@ -1014,7 +1014,7 @@ function ResumeBold({ data }) {
       <div className="bold-header">
         <div className="bold-name">
           {d.personal.name ? (
-            <>{d.personal.name.split(' ').slice(0, -1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></>
+            <>{d.personal.name.split(' ').slice(0,-1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></>
           ) : <span>Your Name</span>}
         </div>
         <div className="bold-contact-strip">
@@ -1029,7 +1029,7 @@ function ResumeBold({ data }) {
           {d.summary && (
             <div className="bold-section">
               <div className="bold-section-title">About</div>
-              <p style={{ fontSize: '0.85rem', lineHeight: '1.7', color: '#555' }}>{d.summary}</p>
+              <p style={{fontSize:'0.85rem',lineHeight:'1.7',color:'#555'}}>{d.summary}</p>
             </div>
           )}
           {d.experience.length > 0 && (
@@ -1108,7 +1108,7 @@ function ResumeCreative({ data }) {
           {d.summary && (
             <div className="creative-section">
               <div className="creative-section-title">Profile</div>
-              <p style={{ fontSize: '0.85rem', lineHeight: '1.7', color: '#555' }}>{d.summary}</p>
+              <p style={{fontSize:'0.85rem',lineHeight:'1.7',color:'#555'}}>{d.summary}</p>
             </div>
           )}
           {d.experience.length > 0 && (
@@ -1142,10 +1142,10 @@ function ResumeCreative({ data }) {
             <>
               <div className="creative-aside-title">Education</div>
               {d.education.map((e, i) => (
-                <div key={i} style={{ marginBottom: '12px' }}>
-                  <div style={{ fontWeight: 700, fontSize: '0.82rem' }}>{e.degree}</div>
-                  <div style={{ fontSize: '0.78rem', color: '#2a6496' }}>{e.institution}</div>
-                  <div style={{ fontSize: '0.75rem', color: '#888' }}>{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div>
+                <div key={i} style={{marginBottom:'12px'}}>
+                  <div style={{fontWeight:700,fontSize:'0.82rem'}}>{e.degree}</div>
+                  <div style={{fontSize:'0.78rem',color:'#2a6496'}}>{e.institution}</div>
+                  <div style={{fontSize:'0.75rem',color:'#888'}}>{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div>
                 </div>
               ))}
             </>
@@ -1184,21 +1184,21 @@ function ResumeExecutive({ data }) {
       </div>
       <div className="exec-body">
         <div className="exec-main">
-          {d.summary && (<div className="exec-section"><div className="exec-section-title">Executive Summary</div><p style={{ fontSize: '0.86rem', lineHeight: '1.75', color: '#444' }}>{d.summary}</p></div>)}
-          {d.experience.length > 0 && (<div className="exec-section"><div className="exec-section-title">Professional Experience</div>{d.experience.map((e, i) => (
-            <div className="exec-entry" key={i}><div className="exec-entry-row"><div className="exec-entry-title">{e.title}</div><div className="exec-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div></div>
-              <div className="exec-entry-sub">{e.company}{e.location ? `, ${e.location}` : ''}</div>{e.description && <div className="exec-entry-desc">{e.description}</div>}</div>
+          {d.summary && (<div className="exec-section"><div className="exec-section-title">Executive Summary</div><p style={{fontSize:'0.86rem',lineHeight:'1.75',color:'#444'}}>{d.summary}</p></div>)}
+          {d.experience.length > 0 && (<div className="exec-section"><div className="exec-section-title">Professional Experience</div>{d.experience.map((e,i)=>(
+            <div className="exec-entry" key={i}><div className="exec-entry-row"><div className="exec-entry-title">{e.title}</div><div className="exec-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div></div>
+            <div className="exec-entry-sub">{e.company}{e.location?`, ${e.location}`:''}</div>{e.description&&<div className="exec-entry-desc">{e.description}</div>}</div>
           ))}</div>)}
-          {d.education.length > 0 && (<div className="exec-section"><div className="exec-section-title">Education</div>{d.education.map((e, i) => (
-            <div className="exec-entry" key={i}><div className="exec-entry-row"><div className="exec-entry-title">{e.degree}</div><div className="exec-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div></div>
-              <div className="exec-entry-sub">{e.institution}</div></div>
+          {d.education.length > 0 && (<div className="exec-section"><div className="exec-section-title">Education</div>{d.education.map((e,i)=>(
+            <div className="exec-entry" key={i}><div className="exec-entry-row"><div className="exec-entry-title">{e.degree}</div><div className="exec-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div></div>
+            <div className="exec-entry-sub">{e.institution}</div></div>
           ))}</div>)}
-          {d.projects.length > 0 && (<div className="exec-section"><div className="exec-section-title">Key Projects</div>{d.projects.map((p, i) => (
-            <div className="exec-entry" key={i}><div className="exec-entry-title">{p.name}</div>{p.technologies && <div className="exec-entry-sub">{p.technologies}</div>}{p.description && <div className="exec-entry-desc">{p.description}</div>}</div>
+          {d.projects.length > 0 && (<div className="exec-section"><div className="exec-section-title">Key Projects</div>{d.projects.map((p,i)=>(
+            <div className="exec-entry" key={i}><div className="exec-entry-title">{p.name}</div>{p.technologies&&<div className="exec-entry-sub">{p.technologies}</div>}{p.description&&<div className="exec-entry-desc">{p.description}</div>}</div>
           ))}</div>)}
         </div>
         <div className="exec-aside">
-          {d.skills.length > 0 && (<><div className="exec-aside-title">Core Competencies</div>{d.skills.map((s, i) => <div className="exec-skill" key={i}>{s}</div>)}</>)}
+          {d.skills.length > 0 && (<><div className="exec-aside-title">Core Competencies</div>{d.skills.map((s,i)=><div className="exec-skill" key={i}>{s}</div>)}</>)}
         </div>
       </div>
     </div>
@@ -1220,21 +1220,21 @@ function ResumeTech({ data }) {
         </div>
       </div>
       {d.summary && <div className="tech-summary">{d.summary}</div>}
-      {d.experience.length > 0 && (<div className="tech-section"><div className="tech-section-title">experience</div>{d.experience.map((e, i) => (
+      {d.experience.length > 0 && (<div className="tech-section"><div className="tech-section-title">experience</div>{d.experience.map((e,i)=>(
         <div className="tech-entry" key={i}><div className="tech-entry-title">{e.title}</div>
-          <div className="tech-entry-meta">{e.company}{e.location ? ` @ ${e.location}` : ''} <span>{e.startDate}{e.endDate ? ` → ${e.endDate}` : ''}</span></div>
-          {e.description && <div className="tech-entry-desc">{e.description}</div>}</div>
+        <div className="tech-entry-meta">{e.company}{e.location?` @ ${e.location}`:''} <span>{e.startDate}{e.endDate?` → ${e.endDate}`:''}</span></div>
+        {e.description&&<div className="tech-entry-desc">{e.description}</div>}</div>
       ))}</div>)}
-      {d.projects.length > 0 && (<div className="tech-section"><div className="tech-section-title">projects</div>{d.projects.map((p, i) => (
+      {d.projects.length > 0 && (<div className="tech-section"><div className="tech-section-title">projects</div>{d.projects.map((p,i)=>(
         <div className="tech-entry" key={i}><div className="tech-entry-title">{p.name}</div>
-          {p.technologies && <div className="tech-entry-meta"><span>{p.technologies}</span></div>}
-          {p.description && <div className="tech-entry-desc">{p.description}</div>}</div>
+        {p.technologies&&<div className="tech-entry-meta"><span>{p.technologies}</span></div>}
+        {p.description&&<div className="tech-entry-desc">{p.description}</div>}</div>
       ))}</div>)}
-      {d.education.length > 0 && (<div className="tech-section"><div className="tech-section-title">education</div>{d.education.map((e, i) => (
+      {d.education.length > 0 && (<div className="tech-section"><div className="tech-section-title">education</div>{d.education.map((e,i)=>(
         <div className="tech-entry" key={i}><div className="tech-entry-title">{e.degree}</div>
-          <div className="tech-entry-meta">{e.institution} <span>{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</span></div></div>
+        <div className="tech-entry-meta">{e.institution} <span>{e.startDate}{e.endDate?`–${e.endDate}`:''}</span></div></div>
       ))}</div>)}
-      {d.skills.length > 0 && (<div className="tech-section"><div className="tech-section-title">skills</div><div className="tech-skills-grid">{d.skills.map((s, i) => <span className="tech-skill" key={i}>{s}</span>)}</div></div>)}
+      {d.skills.length > 0 && (<div className="tech-section"><div className="tech-section-title">skills</div><div className="tech-skills-grid">{d.skills.map((s,i)=><span className="tech-skill" key={i}>{s}</span>)}</div></div>)}
     </div>
   );
 }
@@ -1253,20 +1253,20 @@ function ResumeElegant({ data }) {
           {d.personal.linkedin && <span>{d.personal.linkedin}</span>}
         </div>
       </div>
-      {d.summary && (<div className="elegant-section"><div className="elegant-section-title">Profile</div><p style={{ fontSize: '0.86rem', lineHeight: '1.75', color: '#555', textAlign: 'center', maxWidth: '540px', margin: '0 auto' }}>{d.summary}</p></div>)}
-      {d.experience.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Experience</div>{d.experience.map((e, i) => (
-        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{e.title}</div><div className="elegant-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div></div>
-          <div className="elegant-entry-sub">{e.company}{e.location ? `, ${e.location}` : ''}</div>{e.description && <div className="elegant-entry-desc">{e.description}</div>}</div>
+      {d.summary && (<div className="elegant-section"><div className="elegant-section-title">Profile</div><p style={{fontSize:'0.86rem',lineHeight:'1.75',color:'#555',textAlign:'center',maxWidth:'540px',margin:'0 auto'}}>{d.summary}</p></div>)}
+      {d.experience.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Experience</div>{d.experience.map((e,i)=>(
+        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{e.title}</div><div className="elegant-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div></div>
+        <div className="elegant-entry-sub">{e.company}{e.location?`, ${e.location}`:''}</div>{e.description&&<div className="elegant-entry-desc">{e.description}</div>}</div>
       ))}</div>)}
-      {d.education.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Education</div>{d.education.map((e, i) => (
-        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{e.degree}</div><div className="elegant-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div></div>
-          <div className="elegant-entry-sub">{e.institution}</div></div>
+      {d.education.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Education</div>{d.education.map((e,i)=>(
+        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{e.degree}</div><div className="elegant-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div></div>
+        <div className="elegant-entry-sub">{e.institution}</div></div>
       ))}</div>)}
-      {d.projects.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Projects</div>{d.projects.map((p, i) => (
-        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{p.name}</div><div className="elegant-entry-date">{p.link || ''}</div></div>
-          {p.technologies && <div className="elegant-entry-sub">{p.technologies}</div>}{p.description && <div className="elegant-entry-desc">{p.description}</div>}</div>
+      {d.projects.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Projects</div>{d.projects.map((p,i)=>(
+        <div className="elegant-entry" key={i}><div className="elegant-entry-row"><div className="elegant-entry-title">{p.name}</div><div className="elegant-entry-date">{p.link||''}</div></div>
+        {p.technologies&&<div className="elegant-entry-sub">{p.technologies}</div>}{p.description&&<div className="elegant-entry-desc">{p.description}</div>}</div>
       ))}</div>)}
-      {d.skills.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Skills</div><div className="elegant-skills">{d.skills.map((s, i) => <span className="elegant-skill" key={i}>{s}</span>)}</div></div>)}
+      {d.skills.length > 0 && (<div className="elegant-section"><div className="elegant-section-title">Skills</div><div className="elegant-skills">{d.skills.map((s,i)=><span className="elegant-skill" key={i}>{s}</span>)}</div></div>)}
     </div>
   );
 }
@@ -1287,19 +1287,19 @@ function ResumeStartup({ data }) {
       </div>
       <div className="startup-body">
         {d.summary && <div className="startup-summary">{d.summary}</div>}
-        {d.experience.length > 0 && (<div className="startup-section"><div className="startup-section-title">Experience</div>{d.experience.map((e, i) => (
-          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{e.title}</div><div className="startup-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
-            <div className="startup-entry-sub">{e.company}{e.location ? ` · ${e.location}` : ''}</div>{e.description && <div className="startup-entry-desc">{e.description}</div>}</div>
+        {d.experience.length > 0 && (<div className="startup-section"><div className="startup-section-title">Experience</div>{d.experience.map((e,i)=>(
+          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{e.title}</div><div className="startup-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
+          <div className="startup-entry-sub">{e.company}{e.location?` · ${e.location}`:''}</div>{e.description&&<div className="startup-entry-desc">{e.description}</div>}</div>
         ))}</div>)}
-        {d.education.length > 0 && (<div className="startup-section"><div className="startup-section-title">Education</div>{d.education.map((e, i) => (
-          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{e.degree}</div><div className="startup-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
-            <div className="startup-entry-sub">{e.institution}</div></div>
+        {d.education.length > 0 && (<div className="startup-section"><div className="startup-section-title">Education</div>{d.education.map((e,i)=>(
+          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{e.degree}</div><div className="startup-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
+          <div className="startup-entry-sub">{e.institution}</div></div>
         ))}</div>)}
-        {d.projects.length > 0 && (<div className="startup-section"><div className="startup-section-title">Projects</div>{d.projects.map((p, i) => (
-          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{p.name}</div>{p.link && <div className="startup-entry-date">{p.link}</div>}</div>
-            {p.technologies && <div className="startup-entry-sub">{p.technologies}</div>}{p.description && <div className="startup-entry-desc">{p.description}</div>}</div>
+        {d.projects.length > 0 && (<div className="startup-section"><div className="startup-section-title">Projects</div>{d.projects.map((p,i)=>(
+          <div className="startup-entry" key={i}><div className="startup-entry-row"><div className="startup-entry-title">{p.name}</div>{p.link&&<div className="startup-entry-date">{p.link}</div>}</div>
+          {p.technologies&&<div className="startup-entry-sub">{p.technologies}</div>}{p.description&&<div className="startup-entry-desc">{p.description}</div>}</div>
         ))}</div>)}
-        {d.skills.length > 0 && (<div className="startup-section"><div className="startup-section-title">Skills</div><div className="startup-skills">{d.skills.map((s, i) => <span className="startup-skill" key={i}>{s}</span>)}</div></div>)}
+        {d.skills.length > 0 && (<div className="startup-section"><div className="startup-section-title">Skills</div><div className="startup-skills">{d.skills.map((s,i)=><span className="startup-skill" key={i}>{s}</span>)}</div></div>)}
       </div>
     </div>
   );
@@ -1320,22 +1320,22 @@ function ResumeCorporate({ data }) {
       <div className="corp-accent-bar"></div>
       <div className="corp-body">
         <div className="corp-main">
-          {d.summary && (<div className="corp-section"><div className="corp-section-title">Summary</div><p style={{ fontSize: '0.85rem', lineHeight: '1.7', color: '#444' }}>{d.summary}</p></div>)}
-          {d.experience.length > 0 && (<div className="corp-section"><div className="corp-section-title">Work Experience</div>{d.experience.map((e, i) => (
+          {d.summary && (<div className="corp-section"><div className="corp-section-title">Summary</div><p style={{fontSize:'0.85rem',lineHeight:'1.7',color:'#444'}}>{d.summary}</p></div>)}
+          {d.experience.length > 0 && (<div className="corp-section"><div className="corp-section-title">Work Experience</div>{d.experience.map((e,i)=>(
             <div className="corp-entry" key={i}><div className="corp-entry-title">{e.title}</div>
-              <div className="corp-entry-sub">{e.company}{e.location ? ` · ${e.location}` : ''}</div>
-              <div className="corp-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div>
-              {e.description && <div className="corp-entry-desc">{e.description}</div>}</div>
+            <div className="corp-entry-sub">{e.company}{e.location?` · ${e.location}`:''}</div>
+            <div className="corp-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div>
+            {e.description&&<div className="corp-entry-desc">{e.description}</div>}</div>
           ))}</div>)}
-          {d.projects.length > 0 && (<div className="corp-section"><div className="corp-section-title">Projects</div>{d.projects.map((p, i) => (
-            <div className="corp-entry" key={i}><div className="corp-entry-title">{p.name}</div>{p.technologies && <div className="corp-entry-sub">{p.technologies}</div>}{p.description && <div className="corp-entry-desc">{p.description}</div>}</div>
+          {d.projects.length > 0 && (<div className="corp-section"><div className="corp-section-title">Projects</div>{d.projects.map((p,i)=>(
+            <div className="corp-entry" key={i}><div className="corp-entry-title">{p.name}</div>{p.technologies&&<div className="corp-entry-sub">{p.technologies}</div>}{p.description&&<div className="corp-entry-desc">{p.description}</div>}</div>
           ))}</div>)}
         </div>
         <div className="corp-aside">
-          {d.education.length > 0 && (<><div className="corp-aside-title">Education</div>{d.education.map((e, i) => (
-            <div key={i} style={{ marginBottom: '12px' }}><div className="corp-entry-title" style={{ fontSize: '0.82rem' }}>{e.degree}</div><div style={{ fontSize: '0.78rem', color: '#0066cc' }}>{e.institution}</div><div style={{ fontSize: '0.72rem', color: '#888' }}>{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
+          {d.education.length > 0 && (<><div className="corp-aside-title">Education</div>{d.education.map((e,i)=>(
+            <div key={i} style={{marginBottom:'12px'}}><div className="corp-entry-title" style={{fontSize:'0.82rem'}}>{e.degree}</div><div style={{fontSize:'0.78rem',color:'#0066cc'}}>{e.institution}</div><div style={{fontSize:'0.72rem',color:'#888'}}>{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
           ))}</>)}
-          {d.skills.length > 0 && (<><div className="corp-aside-title">Skills</div>{d.skills.map((s, i) => <div className="corp-skill" key={i}>{s}</div>)}</>)}
+          {d.skills.length > 0 && (<><div className="corp-aside-title">Skills</div>{d.skills.map((s,i)=><div className="corp-skill" key={i}>{s}</div>)}</>)}
         </div>
       </div>
     </div>
@@ -1346,7 +1346,7 @@ function ResumeInfographic({ data }) {
   const d = data;
   const skillDots = (idx) => {
     const level = 3 + (idx % 3);
-    return [1, 2, 3, 4, 5].map(n => <div key={n} className={`info-dot${n <= level ? ' filled' : ''}`}></div>);
+    return [1,2,3,4,5].map(n => <div key={n} className={`info-dot${n<=level?' filled':''}`}></div>);
   };
   return (
     <div className="resume-infographic">
@@ -1361,23 +1361,23 @@ function ResumeInfographic({ data }) {
           {d.personal.address && <div className="info-contact-item">{d.personal.address}</div>}
           {d.personal.linkedin && <div className="info-contact-item">{d.personal.linkedin}</div>}
         </div>
-        {d.skills.length > 0 && (<div className="info-left-section"><div className="info-left-title">Skills</div>{d.skills.map((s, i) => (
+        {d.skills.length > 0 && (<div className="info-left-section"><div className="info-left-title">Skills</div>{d.skills.map((s,i)=>(
           <div className="info-skill-row" key={i}><div className="info-skill-label">{s}</div><div className="info-skill-dots">{skillDots(i)}</div></div>
         ))}</div>)}
       </div>
       <div className="info-right">
-        {d.summary && (<div className="info-section"><div className="info-section-title">About</div><p style={{ fontSize: '0.84rem', lineHeight: '1.7', color: '#555' }}>{d.summary}</p></div>)}
-        {d.experience.length > 0 && (<div className="info-section"><div className="info-section-title">Experience</div>{d.experience.map((e, i) => (
+        {d.summary && (<div className="info-section"><div className="info-section-title">About</div><p style={{fontSize:'0.84rem',lineHeight:'1.7',color:'#555'}}>{d.summary}</p></div>)}
+        {d.experience.length > 0 && (<div className="info-section"><div className="info-section-title">Experience</div>{d.experience.map((e,i)=>(
           <div className="info-entry" key={i}><div className="info-entry-title">{e.title}</div>
-            <div className="info-entry-sub">{e.company}{e.location ? ` · ${e.location}` : ''}{e.startDate ? ` · ${e.startDate}${e.endDate ? `–${e.endDate}` : ''}` : ''}</div>
-            {e.description && <div className="info-entry-desc">{e.description}</div>}</div>
+          <div className="info-entry-sub">{e.company}{e.location?` · ${e.location}`:''}{e.startDate?` · ${e.startDate}${e.endDate?`–${e.endDate}`:''}`:''}</div>
+          {e.description&&<div className="info-entry-desc">{e.description}</div>}</div>
         ))}</div>)}
-        {d.education.length > 0 && (<div className="info-section"><div className="info-section-title">Education</div>{d.education.map((e, i) => (
+        {d.education.length > 0 && (<div className="info-section"><div className="info-section-title">Education</div>{d.education.map((e,i)=>(
           <div className="info-entry" key={i}><div className="info-entry-title">{e.degree}</div>
-            <div className="info-entry-sub">{e.institution}{e.startDate ? ` · ${e.startDate}${e.endDate ? `–${e.endDate}` : ''}` : ''}</div></div>
+          <div className="info-entry-sub">{e.institution}{e.startDate?` · ${e.startDate}${e.endDate?`–${e.endDate}`:''}`:''}</div></div>
         ))}</div>)}
-        {d.projects.length > 0 && (<div className="info-section"><div className="info-section-title">Projects</div>{d.projects.map((p, i) => (
-          <div className="info-entry" key={i}><div className="info-entry-title">{p.name}</div>{p.technologies && <div className="info-entry-sub">{p.technologies}</div>}{p.description && <div className="info-entry-desc">{p.description}</div>}</div>
+        {d.projects.length > 0 && (<div className="info-section"><div className="info-section-title">Projects</div>{d.projects.map((p,i)=>(
+          <div className="info-entry" key={i}><div className="info-entry-title">{p.name}</div>{p.technologies&&<div className="info-entry-sub">{p.technologies}</div>}{p.description&&<div className="info-entry-desc">{p.description}</div>}</div>
         ))}</div>)}
       </div>
     </div>
@@ -1397,20 +1397,20 @@ function ResumeAcademic({ data }) {
           {d.personal.linkedin && <span>{d.personal.linkedin}</span>}
         </div>
       </div>
-      {d.summary && (<div className="acad-section"><div className="acad-section-title">Research Interests / Summary</div><p style={{ fontSize: '0.86rem', lineHeight: '1.8', color: '#333' }}>{d.summary}</p></div>)}
-      {d.education.length > 0 && (<div className="acad-section"><div className="acad-section-title">Education</div>{d.education.map((e, i) => (
-        <div className="acad-entry" key={i}><div className="acad-entry-header"><div className="acad-entry-title">{e.degree}</div><div className="acad-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
-          <div className="acad-entry-sub">{e.institution}</div>{e.description && <div className="acad-entry-desc">{e.description}</div>}</div>
+      {d.summary && (<div className="acad-section"><div className="acad-section-title">Research Interests / Summary</div><p style={{fontSize:'0.86rem',lineHeight:'1.8',color:'#333'}}>{d.summary}</p></div>)}
+      {d.education.length > 0 && (<div className="acad-section"><div className="acad-section-title">Education</div>{d.education.map((e,i)=>(
+        <div className="acad-entry" key={i}><div className="acad-entry-header"><div className="acad-entry-title">{e.degree}</div><div className="acad-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
+        <div className="acad-entry-sub">{e.institution}</div>{e.description&&<div className="acad-entry-desc">{e.description}</div>}</div>
       ))}</div>)}
-      {d.experience.length > 0 && (<div className="acad-section"><div className="acad-section-title">Professional Experience</div>{d.experience.map((e, i) => (
-        <div className="acad-entry" key={i}><div className="acad-entry-header"><div className="acad-entry-title">{e.title}</div><div className="acad-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
-          <div className="acad-entry-sub">{e.company}{e.location ? `, ${e.location}` : ''}</div>{e.description && <div className="acad-entry-desc">{e.description}</div>}</div>
+      {d.experience.length > 0 && (<div className="acad-section"><div className="acad-section-title">Professional Experience</div>{d.experience.map((e,i)=>(
+        <div className="acad-entry" key={i}><div className="acad-entry-header"><div className="acad-entry-title">{e.title}</div><div className="acad-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
+        <div className="acad-entry-sub">{e.company}{e.location?`, ${e.location}`:''}</div>{e.description&&<div className="acad-entry-desc">{e.description}</div>}</div>
       ))}</div>)}
-      {d.projects.length > 0 && (<div className="acad-section"><div className="acad-section-title">Publications & Projects</div>{d.projects.map((p, i) => (
-        <div className="acad-entry" key={i}><div className="acad-entry-title">{p.name}{p.link ? <span style={{ fontWeight: 'normal', fontStyle: 'italic', color: '#666' }}> — {p.link}</span> : ''}</div>
-          {p.technologies && <div className="acad-entry-sub">{p.technologies}</div>}{p.description && <div className="acad-entry-desc">{p.description}</div>}</div>
+      {d.projects.length > 0 && (<div className="acad-section"><div className="acad-section-title">Publications & Projects</div>{d.projects.map((p,i)=>(
+        <div className="acad-entry" key={i}><div className="acad-entry-title">{p.name}{p.link?<span style={{fontWeight:'normal',fontStyle:'italic',color:'#666'}}> — {p.link}</span>:''}</div>
+        {p.technologies&&<div className="acad-entry-sub">{p.technologies}</div>}{p.description&&<div className="acad-entry-desc">{p.description}</div>}</div>
       ))}</div>)}
-      {d.skills.length > 0 && (<div className="acad-section"><div className="acad-section-title">Skills & Expertise</div><div className="acad-skills">{d.skills.map((s, i) => <span className="acad-skill" key={i}>{s}</span>)}</div></div>)}
+      {d.skills.length > 0 && (<div className="acad-section"><div className="acad-section-title">Skills & Expertise</div><div className="acad-skills">{d.skills.map((s,i)=><span className="acad-skill" key={i}>{s}</span>)}</div></div>)}
     </div>
   );
 }
@@ -1420,7 +1420,7 @@ function ResumeNeon({ data }) {
   return (
     <div className="resume-neon">
       <div className="neon-header">
-        <div className="neon-name">{d.personal.name ? <>{d.personal.name.split(' ').slice(0, -1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></> : <span>Your Name</span>}</div>
+        <div className="neon-name">{d.personal.name ? <>{d.personal.name.split(' ').slice(0,-1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></> : <span>Your Name</span>}</div>
         <div className="neon-role">{d.experience[0]?.title || 'Professional'}</div>
         <div className="neon-contact">
           {d.personal.email && <span>{d.personal.email}</span>}
@@ -1432,25 +1432,25 @@ function ResumeNeon({ data }) {
       <div className="neon-body">
         <div className="neon-main">
           {d.summary && <div className="neon-summary">{d.summary}</div>}
-          {d.experience.length > 0 && (<div className="neon-section"><div className="neon-section-title">Experience</div>{d.experience.map((e, i) => (
+          {d.experience.length > 0 && (<div className="neon-section"><div className="neon-section-title">Experience</div>{d.experience.map((e,i)=>(
             <div className="neon-entry" key={i}><div className="neon-entry-title">{e.title}</div>
-              <div className="neon-entry-sub">{e.company}{e.location ? ` · ${e.location}` : ''}</div>
-              <div className="neon-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div>
-              {e.description && <div className="neon-entry-desc">{e.description}</div>}</div>
+            <div className="neon-entry-sub">{e.company}{e.location?` · ${e.location}`:''}</div>
+            <div className="neon-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div>
+            {e.description&&<div className="neon-entry-desc">{e.description}</div>}</div>
           ))}</div>)}
-          {d.projects.length > 0 && (<div className="neon-section"><div className="neon-section-title">Projects</div>{d.projects.map((p, i) => (
+          {d.projects.length > 0 && (<div className="neon-section"><div className="neon-section-title">Projects</div>{d.projects.map((p,i)=>(
             <div className="neon-entry" key={i}><div className="neon-entry-title">{p.name}</div>
-              {p.technologies && <div className="neon-entry-sub">{p.technologies}</div>}
-              {p.description && <div className="neon-entry-desc">{p.description}</div>}</div>
+            {p.technologies&&<div className="neon-entry-sub">{p.technologies}</div>}
+            {p.description&&<div className="neon-entry-desc">{p.description}</div>}</div>
           ))}</div>)}
-          {d.education.length > 0 && (<div className="neon-section"><div className="neon-section-title">Education</div>{d.education.map((e, i) => (
+          {d.education.length > 0 && (<div className="neon-section"><div className="neon-section-title">Education</div>{d.education.map((e,i)=>(
             <div className="neon-entry" key={i}><div className="neon-entry-title">{e.degree}</div>
-              <div className="neon-entry-sub">{e.institution}</div>
-              <div className="neon-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
+            <div className="neon-entry-sub">{e.institution}</div>
+            <div className="neon-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
           ))}</div>)}
         </div>
         <div className="neon-aside">
-          {d.skills.length > 0 && (<div className="neon-section"><div className="neon-section-title">Skills</div>{d.skills.map((s, i) => <span className="neon-skill" key={i}>{s}</span>)}</div>)}
+          {d.skills.length > 0 && (<div className="neon-section"><div className="neon-section-title">Skills</div>{d.skills.map((s,i)=><span className="neon-skill" key={i}>{s}</span>)}</div>)}
         </div>
       </div>
     </div>
@@ -1476,23 +1476,23 @@ function ResumePastel({ data }) {
       </div>
       <div className="pastel-body">
         {d.summary && <div className="pastel-summary">{d.summary}</div>}
-        {d.experience.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Experience</div>{d.experience.map((e, i) => (
+        {d.experience.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Experience</div>{d.experience.map((e,i)=>(
           <div className="pastel-entry" key={i}><div className="pastel-entry-title">{e.title}</div>
-            <div className="pastel-entry-sub">{e.company}{e.location ? ` · ${e.location}` : ''}</div>
-            <div className="pastel-entry-date">{e.startDate}{e.endDate ? ` – ${e.endDate}` : ''}</div>
-            {e.description && <div className="pastel-entry-desc">{e.description}</div>}</div>
+          <div className="pastel-entry-sub">{e.company}{e.location?` · ${e.location}`:''}</div>
+          <div className="pastel-entry-date">{e.startDate}{e.endDate?` – ${e.endDate}`:''}</div>
+          {e.description&&<div className="pastel-entry-desc">{e.description}</div>}</div>
         ))}</div>)}
-        {d.education.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Education</div>{d.education.map((e, i) => (
+        {d.education.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Education</div>{d.education.map((e,i)=>(
           <div className="pastel-entry" key={i}><div className="pastel-entry-title">{e.degree}</div>
-            <div className="pastel-entry-sub">{e.institution}</div>
-            <div className="pastel-entry-date">{e.startDate}{e.endDate ? `–${e.endDate}` : ''}</div></div>
+          <div className="pastel-entry-sub">{e.institution}</div>
+          <div className="pastel-entry-date">{e.startDate}{e.endDate?`–${e.endDate}`:''}</div></div>
         ))}</div>)}
-        {d.projects.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Projects</div>{d.projects.map((p, i) => (
+        {d.projects.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Projects</div>{d.projects.map((p,i)=>(
           <div className="pastel-entry" key={i}><div className="pastel-entry-title">{p.name}</div>
-            {p.technologies && <div className="pastel-entry-sub">{p.technologies}</div>}
-            {p.description && <div className="pastel-entry-desc">{p.description}</div>}</div>
+          {p.technologies&&<div className="pastel-entry-sub">{p.technologies}</div>}
+          {p.description&&<div className="pastel-entry-desc">{p.description}</div>}</div>
         ))}</div>)}
-        {d.skills.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Skills</div><div className="pastel-skills">{d.skills.map((s, i) => <span className="pastel-skill" key={i}>{s}</span>)}</div></div>)}
+        {d.skills.length > 0 && (<div className="pastel-section"><div className="pastel-section-title">Skills</div><div className="pastel-skills">{d.skills.map((s,i)=><span className="pastel-skill" key={i}>{s}</span>)}</div></div>)}
       </div>
     </div>
   );
@@ -1503,7 +1503,7 @@ function ResumeTimeline({ data }) {
   return (
     <div className="resume-timeline">
       <div className="tl-header">
-        <div className="tl-name">{d.personal.name ? <>{d.personal.name.split(' ').slice(0, -1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></> : <span>Your Name</span>}</div>
+        <div className="tl-name">{d.personal.name ? <>{d.personal.name.split(' ').slice(0,-1).join(' ')} <span>{d.personal.name.split(' ').slice(-1)}</span></> : <span>Your Name</span>}</div>
         <div className="tl-bar"></div>
         <div className="tl-contact">
           {d.personal.email && <span>{d.personal.email}</span>}
@@ -1515,27 +1515,27 @@ function ResumeTimeline({ data }) {
       {d.summary && <div className="tl-summary">{d.summary}</div>}
       <div className="tl-layout">
         <div className="tl-main">
-          {d.experience.length > 0 && (<div className="tl-section"><div className="tl-section-title">Work Experience</div>{d.experience.map((e, i) => (
+          {d.experience.length > 0 && (<div className="tl-section"><div className="tl-section-title">Work Experience</div>{d.experience.map((e,i)=>(
             <div className="tl-entry" key={i}>
-              <div className="tl-date-col"><div className="tl-date">{e.startDate}</div><div className="tl-date-end">{e.endDate || 'Present'}</div></div>
-              <div className="tl-content"><div className="tl-entry-title">{e.title}</div><div className="tl-entry-sub">{e.company}{e.location ? `, ${e.location}` : ''}</div>{e.description && <div className="tl-entry-desc">{e.description}</div>}</div>
+              <div className="tl-date-col"><div className="tl-date">{e.startDate}</div><div className="tl-date-end">{e.endDate||'Present'}</div></div>
+              <div className="tl-content"><div className="tl-entry-title">{e.title}</div><div className="tl-entry-sub">{e.company}{e.location?`, ${e.location}`:''}</div>{e.description&&<div className="tl-entry-desc">{e.description}</div>}</div>
             </div>
           ))}</div>)}
-          {d.projects.length > 0 && (<div className="tl-section"><div className="tl-section-title">Projects</div>{d.projects.map((p, i) => (
+          {d.projects.length > 0 && (<div className="tl-section"><div className="tl-section-title">Projects</div>{d.projects.map((p,i)=>(
             <div className="tl-entry" key={i}>
-              <div className="tl-date-col"><div className="tl-date">{p.link || ''}</div></div>
-              <div className="tl-content"><div className="tl-entry-title">{p.name}</div>{p.technologies && <div className="tl-entry-sub">{p.technologies}</div>}{p.description && <div className="tl-entry-desc">{p.description}</div>}</div>
+              <div className="tl-date-col"><div className="tl-date">{p.link||''}</div></div>
+              <div className="tl-content"><div className="tl-entry-title">{p.name}</div>{p.technologies&&<div className="tl-entry-sub">{p.technologies}</div>}{p.description&&<div className="tl-entry-desc">{p.description}</div>}</div>
             </div>
           ))}</div>)}
-          {d.education.length > 0 && (<div className="tl-section"><div className="tl-section-title">Education</div>{d.education.map((e, i) => (
+          {d.education.length > 0 && (<div className="tl-section"><div className="tl-section-title">Education</div>{d.education.map((e,i)=>(
             <div className="tl-entry" key={i}>
-              <div className="tl-date-col"><div className="tl-date">{e.startDate}</div><div className="tl-date-end">{e.endDate || ''}</div></div>
+              <div className="tl-date-col"><div className="tl-date">{e.startDate}</div><div className="tl-date-end">{e.endDate||''}</div></div>
               <div className="tl-content"><div className="tl-entry-title">{e.degree}</div><div className="tl-entry-sub">{e.institution}</div></div>
             </div>
           ))}</div>)}
         </div>
         <div className="tl-aside">
-          {d.skills.length > 0 && (<><div className="tl-aside-title">Skills</div>{d.skills.map((s, i) => <div className="tl-aside-item" key={i}>{s}</div>)}</>)}
+          {d.skills.length > 0 && (<><div className="tl-aside-title">Skills</div>{d.skills.map((s,i)=><div className="tl-aside-item" key={i}>{s}</div>)}</>)}
         </div>
       </div>
     </div>
@@ -1632,19 +1632,19 @@ function FormPage({ data, setData, onGenerate }) {
           <div className="form-row cols-2">
             <div className="form-group">
               <label className="form-label">Full Name <span>*</span></label>
-              <input className={`form-input${errors.name ? ' error' : ''}`} placeholder="Ravi Kumar" value={data.personal.name} onChange={e => { updatePersonal('name', e.target.value); setErrors(er => ({ ...er, name: '' })); }} />
+              <input className={`form-input${errors.name ? ' error' : ''}`} placeholder="Ravi Kumar" value={data.personal.name} onChange={e => { updatePersonal('name', e.target.value); setErrors(er => ({...er, name: ''})); }} />
               {errors.name && <span className="error-msg">{errors.name}</span>}
             </div>
             <div className="form-group">
               <label className="form-label">Email Address <span>*</span></label>
-              <input className={`form-input${errors.email ? ' error' : ''}`} type="email" placeholder="ravi@example.com" value={data.personal.email} onChange={e => { updatePersonal('email', e.target.value); setErrors(er => ({ ...er, email: '' })); }} />
+              <input className={`form-input${errors.email ? ' error' : ''}`} type="email" placeholder="ravi@example.com" value={data.personal.email} onChange={e => { updatePersonal('email', e.target.value); setErrors(er => ({...er, email: ''})); }} />
               {errors.email && <span className="error-msg">{errors.email}</span>}
             </div>
           </div>
           <div className="form-row cols-2">
             <div className="form-group">
               <label className="form-label">Phone <span>*</span></label>
-              <input className={`form-input${errors.phone ? ' error' : ''}`} placeholder="+91 98765 43210" value={data.personal.phone} onChange={e => { updatePersonal('phone', e.target.value); setErrors(er => ({ ...er, phone: '' })); }} />
+              <input className={`form-input${errors.phone ? ' error' : ''}`} placeholder="+91 98765 43210" value={data.personal.phone} onChange={e => { updatePersonal('phone', e.target.value); setErrors(er => ({...er, phone: ''})); }} />
               {errors.phone && <span className="error-msg">{errors.phone}</span>}
             </div>
             <div className="form-group">
@@ -1662,7 +1662,7 @@ function FormPage({ data, setData, onGenerate }) {
         <FormSection icon="📋" title="Career Summary">
           <div className="form-group">
             <label className="form-label">Professional Summary</label>
-            <textarea className="form-textarea" rows={5} placeholder="A results-driven software engineer with 3+ years of experience in building real-time systems and scalable backends using Node.js and Python..." value={data.summary} onChange={e => updateSummary(e.target.value)} style={{ minHeight: '120px' }} />
+            <textarea className="form-textarea" rows={5} placeholder="A results-driven software engineer with 3+ years of experience in building real-time systems and scalable backends using Node.js and Python..." value={data.summary} onChange={e => updateSummary(e.target.value)} style={{minHeight: '120px'}} />
           </div>
         </FormSection>
 
@@ -1686,7 +1686,7 @@ function FormPage({ data, setData, onGenerate }) {
               <div className="entry-actions">
                 <button className="entry-btn danger" onClick={() => removeEntry('experience', i)} title="Remove">✕</button>
               </div>
-              <div className="form-row cols-2" style={{ marginRight: '40px' }}>
+              <div className="form-row cols-2" style={{marginRight:'40px'}}>
                 <div className="form-group">
                   <label className="form-label">Job Title</label>
                   <input className="form-input" placeholder="Software Engineer" value={exp.title} onChange={e => updateEntry('experience', i, 'title', e.target.value)} />
@@ -1728,7 +1728,7 @@ function FormPage({ data, setData, onGenerate }) {
               <div className="entry-actions">
                 <button className="entry-btn danger" onClick={() => removeEntry('education', i)}>✕</button>
               </div>
-              <div className="form-row cols-2" style={{ marginRight: '40px' }}>
+              <div className="form-row cols-2" style={{marginRight:'40px'}}>
                 <div className="form-group">
                   <label className="form-label">Degree / Certificate</label>
                   <input className="form-input" placeholder="B.Tech Computer Science" value={edu.degree} onChange={e => updateEntry('education', i, 'degree', e.target.value)} />
@@ -1766,7 +1766,7 @@ function FormPage({ data, setData, onGenerate }) {
               <div className="entry-actions">
                 <button className="entry-btn danger" onClick={() => removeEntry('projects', i)}>✕</button>
               </div>
-              <div className="form-row cols-2" style={{ marginRight: '40px' }}>
+              <div className="form-row cols-2" style={{marginRight:'40px'}}>
                 <div className="form-group">
                   <label className="form-label">Project Name</label>
                   <input className="form-input" placeholder="Andhra Taxi App" value={proj.name} onChange={e => updateEntry('projects', i, 'name', e.target.value)} />
@@ -1795,7 +1795,7 @@ function FormPage({ data, setData, onGenerate }) {
           <button className="generate-btn" onClick={handleGenerate}>
             Generate My Resume →
           </button>
-          <p style={{ marginTop: '12px', fontSize: '0.82rem', color: 'var(--muted)' }}>Choose a professional template on the next page</p>
+          <p style={{marginTop:'12px',fontSize:'0.82rem',color:'var(--muted)'}}>Choose a professional template on the next page</p>
         </div>
       </div>
     </div>
@@ -1927,8 +1927,8 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h4>Product</h4>
-          <button className="footer-link-btn">Resume Builder</button>
-          <button className="footer-link-btn">Templates</button>
+          <a href="#">Resume Builder</a>
+          <a href="#">Templates</a>
           {/* <a href="#">Resume Tips</a>
           <a href="#">Cover Letter</a> */}
         </div>

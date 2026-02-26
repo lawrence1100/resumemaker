@@ -719,11 +719,154 @@ const styles = `
   .footer-col h4 { color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.04em; }
   .footer-col p, .footer-col a { font-size: 0.82rem; line-height: 1.8; display: block; color: rgba(255,255,255,0.55); text-decoration: none; }
   .footer-col a:hover { color: white; }
+  .footer-link-btn { background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.82rem; line-height: 1.8; display: block; color: rgba(255,255,255,0.55); text-align: left; padding: 0; }
+  .footer-link-btn:hover { color: white; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.78rem; }
 
   .progress-bar { display: flex; gap: 8px; margin-bottom: 2rem; }
   .progress-step { flex: 1; height: 4px; background: var(--border); border-radius: 2px; transition: background 0.3s; }
   .progress-step.done { background: var(--accent); }
+
+  /* ── EXTRA PAGES (About / Contact / Privacy) ── */
+  .xpage { min-height: 70vh; }
+
+  /* shared inner page hero */
+  .xpage-hero {
+    background: linear-gradient(135deg, var(--ink) 0%, #1e1d2e 60%, #2a2435 100%);
+    padding: 4rem 2rem 5rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .xpage-hero::before {
+    content: ''; position: absolute; top: -40%; left: -10%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(232,86,58,0.12) 0%, transparent 70%); pointer-events: none;
+  }
+  .xpage-hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(232,86,58,0.15); border: 1px solid rgba(232,86,58,0.3);
+    color: #ff8c7a; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 1.2rem;
+  }
+  .xpage-hero h1 {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
+    color: white; line-height: 1.15; margin-bottom: 0.8rem; position: relative; z-index: 1;
+  }
+  .xpage-hero h1 span { color: var(--accent); font-style: italic; }
+  .xpage-hero p { color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 460px; margin: 0 auto; line-height: 1.7; position: relative; z-index: 1; }
+
+  /* page body wrapper */
+  .xpage-body { max-width: 860px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+  @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.8rem; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .about-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .about-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .about-card h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--ink); }
+  .about-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .about-mission {
+    background: linear-gradient(135deg, var(--ink) 0%, #1e1d2e 100%);
+    border-radius: var(--radius); padding: 2.5rem; margin-bottom: 3rem; text-align: center;
+  }
+  .about-mission h2 { font-family: var(--font-display); font-size: 1.8rem; color: white; margin-bottom: 0.8rem; }
+  .about-mission p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; max-width: 560px; margin: 0 auto; }
+  .about-team-title { font-family: var(--font-display); font-size: 1.6rem; text-align: center; margin-bottom: 1.8rem; }
+  .about-team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (max-width: 640px) { .about-team-grid { grid-template-columns: 1fr; } }
+  .team-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; text-align: center; box-shadow: var(--shadow);
+  }
+  .team-avatar {
+    width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 800; color: white;
+  }
+  .team-name { font-weight: 700; font-size: 0.95rem; }
+  .team-role { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+  .about-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  @media (max-width: 640px) { .about-stats-row { grid-template-columns: 1fr; } }
+  .about-stat-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; text-align: center; box-shadow: var(--shadow);
+  }
+  .about-stat-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--accent); }
+  .about-stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── CONTACT ── */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2.5rem; }
+  @media (max-width: 700px) { .contact-layout { grid-template-columns: 1fr; } }
+  .contact-info-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2rem; box-shadow: var(--shadow); height: fit-content;
+  }
+  .contact-info-card h2 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1.4rem; }
+  .contact-info-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .contact-info-item:last-child { border-bottom: none; }
+  .contact-info-icon {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--ink);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-info-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 3px; }
+  .contact-info-value { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+  .contact-info-value a { color: var(--accent); text-decoration: none; }
+  .contact-info-value a:hover { text-decoration: underline; }
+  .contact-form-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2rem; box-shadow: var(--shadow);
+  }
+  .contact-form-card h2 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1.4rem; }
+  .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 500px) { .contact-form-row { grid-template-columns: 1fr; } }
+  .contact-submit-btn {
+    width: 100%; background: var(--ink); color: white; border: none; cursor: pointer;
+    padding: 13px; border-radius: 8px; font-size: 0.95rem; font-weight: 700;
+    font-family: var(--font-body); transition: all 0.2s; margin-top: 8px;
+  }
+  .contact-submit-btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .contact-success {
+    background: #f0faf4; border: 1px solid #a8d5b5; border-radius: 10px;
+    padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 12px;
+    margin-top: 1rem; font-size: 0.9rem; color: #1e6e3e; font-weight: 500;
+  }
+  .contact-map-band {
+    background: var(--ink); border-radius: var(--radius); padding: 2rem;
+    margin-top: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .contact-map-text h3 { font-family: var(--font-display); color: white; font-size: 1.2rem; }
+  .contact-map-text p { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 4px; }
+  .contact-map-badge { background: rgba(232,86,58,0.15); border: 1px solid rgba(232,86,58,0.3); color: #ff8c7a; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 6px; }
+
+  /* ── PRIVACY ── */
+  .privacy-toc {
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; margin-bottom: 2rem; box-shadow: var(--shadow);
+  }
+  .privacy-toc h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 10px; }
+  .privacy-toc-list { display: flex; flex-direction: column; gap: 6px; }
+  .privacy-toc-item {
+    font-size: 0.88rem; color: var(--accent); cursor: pointer; font-weight: 500;
+    display: flex; align-items: center; gap: 8px; background: none; border: none;
+    font-family: var(--font-body); text-align: left; padding: 3px 0;
+  }
+  .privacy-toc-item:hover { color: var(--ink); }
+  .privacy-section { margin-bottom: 2.5rem; }
+  .privacy-section h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+  .privacy-section p { font-size: 0.9rem; color: #444; line-height: 1.8; margin-bottom: 0.8rem; }
+  .privacy-section ul { padding-left: 1.2rem; margin: 0.6rem 0; }
+  .privacy-section ul li { font-size: 0.9rem; color: #444; line-height: 1.8; margin-bottom: 4px; }
+  .privacy-highlight {
+    background: #fef0ec; border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 1rem 0;
+    font-size: 0.88rem; color: #555; line-height: 1.7;
+  }
+  .privacy-updated { font-size: 0.78rem; color: var(--muted); margin-bottom: 2rem; font-style: italic; }
+
 `;
 
 // ============================================================
@@ -1632,12 +1775,12 @@ function FormPage({ data, setData, onGenerate }) {
           <div className="form-row cols-2">
             <div className="form-group">
               <label className="form-label">Full Name <span>*</span></label>
-              <input className={`form-input${errors.name ? ' error' : ''}`} placeholder="Ravi Kumar" value={data.personal.name} onChange={e => { updatePersonal('name', e.target.value); setErrors(er => ({...er, name: ''})); }} />
+              <input className={`form-input${errors.name ? ' error' : ''}`} placeholder="Aravind Kumar" value={data.personal.name} onChange={e => { updatePersonal('name', e.target.value); setErrors(er => ({...er, name: ''})); }} />
               {errors.name && <span className="error-msg">{errors.name}</span>}
             </div>
             <div className="form-group">
               <label className="form-label">Email Address <span>*</span></label>
-              <input className={`form-input${errors.email ? ' error' : ''}`} type="email" placeholder="ravi@example.com" value={data.personal.email} onChange={e => { updatePersonal('email', e.target.value); setErrors(er => ({...er, email: ''})); }} />
+              <input className={`form-input${errors.email ? ' error' : ''}`} type="email" placeholder="aravind@example.com" value={data.personal.email} onChange={e => { updatePersonal('email', e.target.value); setErrors(er => ({...er, email: ''})); }} />
               {errors.email && <span className="error-msg">{errors.email}</span>}
             </div>
           </div>
@@ -1654,7 +1797,7 @@ function FormPage({ data, setData, onGenerate }) {
           </div>
           <div className="form-group">
             <label className="form-label">LinkedIn URL</label>
-            <input className="form-input" placeholder="linkedin.com/in/ravikumar" value={data.personal.linkedin} onChange={e => updatePersonal('linkedin', e.target.value)} />
+            <input className="form-input" placeholder="linkedin.com/in/aravindkumar" value={data.personal.linkedin} onChange={e => updatePersonal('linkedin', e.target.value)} />
           </div>
         </FormSection>
 
@@ -1693,7 +1836,7 @@ function FormPage({ data, setData, onGenerate }) {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Company</label>
-                  <input className="form-input" placeholder="Jelebi Software" value={exp.company} onChange={e => updateEntry('experience', i, 'company', e.target.value)} />
+                  <input className="form-input" placeholder="Techno Software" value={exp.company} onChange={e => updateEntry('experience', i, 'company', e.target.value)} />
                 </div>
               </div>
               <div className="form-row cols-3">
@@ -1795,7 +1938,7 @@ function FormPage({ data, setData, onGenerate }) {
           <button className="generate-btn" onClick={handleGenerate}>
             Generate My Resume →
           </button>
-          <p style={{marginTop:'12px',fontSize:'0.82rem',color:'var(--muted)'}}>Choose a professional template on the next page</p>
+          <p style={{marginTop:'12px',fontSize:'0.82rem',color:'var(--muted)'}}>Choose from 5 professional templates on the next page</p>
         </div>
       </div>
     </div>
@@ -1896,6 +2039,350 @@ function TemplatesPage({ data, onBack }) {
   );
 }
 
+
+// ============================================================
+// PAGE: ABOUT
+// ============================================================
+function AboutPage({ onNav }) {
+  return (
+    <div className="xpage">
+      <div className="xpage-hero">
+        <div className="xpage-hero-badge">✦ Our Story</div>
+        <h1>About <span>luckyzResumé</span></h1>
+        <p>We believe every professional deserves a resume that opens doors — beautifully designed and effortlessly created.</p>
+      </div>
+      <div className="xpage-body">
+
+        {/* Mission */}
+        <div className="about-mission">
+          <h2>Our Mission</h2>
+          <p>To democratize professional resume building by giving every job seeker — from fresh graduates to C-suite executives — access to world-class resume templates that would otherwise cost hundreds of dollars, completely free.</p>
+        </div>
+
+        {/* Stats */}
+        <div className="about-stats-row">
+          <div className="about-stat-card"><div className="about-stat-num">50+</div><div className="about-stat-label">Templates</div></div>
+          <div className="about-stat-card"><div className="about-stat-num">100%</div><div className="about-stat-label">Free Forever</div></div>
+          <div className="about-stat-card"><div className="about-stat-num">PDF</div><div className="about-stat-label">Instant Export</div></div>
+        </div>
+
+        {/* Feature cards */}
+        <div className="about-grid">
+          <div className="about-card">
+            <div className="about-card-icon">🎨</div>
+            <h3>15 Unique Templates</h3>
+            <p>From sleek minimal designs to bold executive layouts — every template is carefully crafted to pass ATS systems and impress hiring managers.</p>
+          </div>
+          <div className="about-card">
+            <div className="about-card-icon">⚡</div>
+            <h3>Real-Time Preview</h3>
+            <p>See your resume update live as you type. No waiting, no guessing — what you see is exactly what you download.</p>
+          </div>
+          <div className="about-card">
+            <div className="about-card-icon">📄</div>
+            <h3>Instant PDF Download</h3>
+            <p>One click to download a pixel-perfect, print-ready PDF. Compatible with all major job portals and email clients.</p>
+          </div>
+          <div className="about-card">
+            <div className="about-card-icon">🔒</div>
+            <h3>Your Data Stays Yours</h3>
+            <p>Everything you type stays in your browser. We don't store, sell, or process any of your personal information on our servers.</p>
+          </div>
+          <div className="about-card">
+            <div className="about-card-icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>Build your resume on any device — desktop, tablet, or mobile. The interface adapts perfectly to every screen size.</p>
+          </div>
+          <div className="about-card">
+            <div className="about-card-icon">🌍</div>
+            <h3>Built for Everyone</h3>
+            <p>Whether you're a software engineer, academic, executive, or creative professional — there's a template designed exactly for your field.</p>
+          </div>
+        </div>
+
+        {/* Team */}
+        {/* <h2 className="about-team-title">Meet the Team</h2>
+        <div className="about-team-grid">
+          <div className="team-card">
+            <div className="team-avatar" style={{background:'linear-gradient(135deg,#e8563a,#c0392b)'}}>LK</div>
+            <div className="team-name">Lawrence Eluri</div>
+            <div className="team-role">Founder & Full-Stack Developer</div>
+          </div>
+          <div className="team-card">
+            <div className="team-avatar" style={{background:'linear-gradient(135deg,#2a6496,#1a3a5c)'}}>UI</div>
+            <div className="team-name">UI Design Team</div>
+            <div className="team-role">Template Design & UX</div>
+          </div>
+          <div className="team-card">
+            <div className="team-avatar" style={{background:'linear-gradient(135deg,#27ae60,#1e8449)'}}>QA</div>
+            <div className="team-name">QA & Testing</div>
+            <div className="team-role">Quality Assurance</div>
+          </div>
+        </div> */}
+
+        <div style={{textAlign:'center',marginTop:'3rem'}}>
+          <button className="generate-btn" onClick={() => onNav('home')}>
+            Start Building Your Resume →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// PAGE: CONTACT
+// ============================================================
+function ContactPage() {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const update = (f, v) => setForm(p => ({ ...p, [f]: v }));
+
+  const validate = () => {
+    const e = {};
+    if (!form.name.trim()) e.name = 'Name is required';
+    if (!form.email.trim()) e.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email';
+    if (!form.message.trim()) e.message = 'Message is required';
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const handleSubmit = () => {
+    if (validate()) {
+      setSubmitted(true);
+      setForm({ name: '', email: '', subject: '', message: '' });
+    }
+  };
+
+  return (
+    <div className="xpage">
+      <div className="xpage-hero">
+        <div className="xpage-hero-badge">✦ Get In Touch</div>
+        <h1>Contact <span>Us</span></h1>
+        <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+      </div>
+      <div className="xpage-body">
+        <div className="contact-layout">
+
+          {/* Info */}
+          <div className="contact-info-card">
+            <h2>Contact Info</h2>
+            <div className="contact-info-item">
+              <div className="contact-info-icon">📞</div>
+              <div>
+                <div className="contact-info-label">Phone</div>
+                <div className="contact-info-value"><a href="tel:7382368499">+91 7382368499</a></div>
+              </div>
+            </div>
+            <div className="contact-info-item">
+              <div className="contact-info-icon">✉️</div>
+              <div>
+                <div className="contact-info-label">Email</div>
+                <div className="contact-info-value"><a href="mailto:elurilawrence.dev@gmail.com">elurilawrence.dev@gmail.com</a></div>
+              </div>
+            </div>
+            <div className="contact-info-item">
+              <div className="contact-info-icon">📍</div>
+              <div>
+                <div className="contact-info-label">Location</div>
+                <div className="contact-info-value">Rajahmundry, Andhra Pradesh, India</div>
+              </div>
+            </div>
+            <div className="contact-info-item">
+              <div className="contact-info-icon">⏰</div>
+              <div>
+                <div className="contact-info-label">Response Time</div>
+                <div className="contact-info-value">Within 24 hours</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="contact-form-card">
+            <h2>Send a Message</h2>
+            {submitted && (
+              <div className="contact-success">
+                ✅ Thank you! Your message has been sent. We'll get back to you soon.
+              </div>
+            )}
+            <div className="contact-form-row">
+              <div className="form-group">
+                <label className="form-label">Your Name <span style={{color:'var(--accent)'}}>*</span></label>
+                <input className={`form-input${errors.name ? ' error' : ''}`} placeholder="Aravind Kumar" value={form.name} onChange={e => { update('name', e.target.value); setErrors(p => ({...p, name: ''})); }} />
+                {errors.name && <span className="error-msg">{errors.name}</span>}
+              </div>
+              <div className="form-group">
+                <label className="form-label">Email Address <span style={{color:'var(--accent)'}}>*</span></label>
+                <input className={`form-input${errors.email ? ' error' : ''}`} type="email" placeholder="you@example.com" value={form.email} onChange={e => { update('email', e.target.value); setErrors(p => ({...p, email: ''})); }} />
+                {errors.email && <span className="error-msg">{errors.email}</span>}
+              </div>
+            </div>
+            <div className="form-group" style={{marginBottom:'1rem'}}>
+              <label className="form-label">Subject</label>
+              <input className="form-input" placeholder="Template request, bug report, general query..." value={form.subject} onChange={e => update('subject', e.target.value)} />
+            </div>
+            <div className="form-group" style={{marginBottom:'1rem'}}>
+              <label className="form-label">Message <span style={{color:'var(--accent)'}}>*</span></label>
+              <textarea className={`form-textarea${errors.message ? ' error' : ''}`} rows={5} placeholder="Write your message here..." value={form.message} onChange={e => { update('message', e.target.value); setErrors(p => ({...p, message: ''})); }} style={{minHeight:'130px'}} />
+              {errors.message && <span className="error-msg">{errors.message}</span>}
+            </div>
+            <button className="contact-submit-btn" onClick={handleSubmit}>Send Message →</button>
+          </div>
+        </div>
+
+        {/* Location band */}
+        <div className="contact-map-band">
+          <div className="contact-map-text">
+            <h3>📍 Based in Rajahmundry, Andhra Pradesh</h3>
+            <p>Serving job seekers across India and around the world.</p>
+          </div>
+          <div className="contact-map-badge">🇮🇳 Made in India</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// PAGE: PRIVACY POLICY
+// ============================================================
+function PrivacyPage() {
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const sections = [
+    { id: 'pp-info',      label: '1. Information We Collect' },
+    { id: 'pp-use',       label: '2. How We Use Your Information' },
+    { id: 'pp-storage',   label: '3. Data Storage & Security' },
+    { id: 'pp-cookies',   label: '4. Cookies & Tracking' },
+    { id: 'pp-third',     label: '5. Third-Party Services' },
+    { id: 'pp-rights',    label: '6. Your Rights' },
+    { id: 'pp-children',  label: '7. Children\'s Privacy' },
+    { id: 'pp-changes',   label: '8. Changes to This Policy' },
+    { id: 'pp-contact',   label: '9. Contact Us' },
+  ];
+
+  return (
+    <div className="xpage">
+      <div className="xpage-hero">
+        <div className="xpage-hero-badge">✦ Legal</div>
+        <h1>Privacy <span>Policy</span></h1>
+        <p>We take your privacy seriously. Here's exactly how we handle your data — in plain language.</p>
+      </div>
+      <div className="xpage-body">
+        <p className="privacy-updated">Last updated: {new Date().toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' })}</p>
+
+        {/* Table of Contents */}
+        <div className="privacy-toc">
+          <h3>Table of Contents</h3>
+          <div className="privacy-toc-list">
+            {sections.map(s => (
+              <button key={s.id} className="privacy-toc-item" onClick={() => scrollTo(s.id)}>
+                → {s.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="privacy-highlight">
+          <strong>Summary:</strong> luckyzResumé is a client-side application. Your resume data is processed entirely in your browser and is never transmitted to or stored on our servers. We don't sell, share, or monetize your personal information.
+        </div>
+
+        <div className="privacy-section" id="pp-info">
+          <h2>1. Information We Collect</h2>
+          <p>luckyzResumé operates entirely in your web browser. When you use our resume builder, the information you enter (name, email, phone number, work history, education, skills, etc.) is stored only in your browser's memory during your session.</p>
+          <p>We may collect the following non-personal, anonymized data automatically:</p>
+          <ul>
+            <li>Browser type and version (for compatibility purposes)</li>
+            <li>General geographic region (country/city level, not precise location)</li>
+            <li>Pages visited and time spent on the application</li>
+            <li>Device type (desktop, tablet, or mobile)</li>
+          </ul>
+          <p>We do <strong>not</strong> collect: Social Security Numbers, financial information, precise GPS location, or any biometric data.</p>
+        </div>
+
+        <div className="privacy-section" id="pp-use">
+          <h2>2. How We Use Your Information</h2>
+          <p>The resume content you enter is used solely to render your resume preview and generate your downloadable PDF. This processing happens entirely in your browser — no data is transmitted to our servers.</p>
+          <p>Any anonymized analytics data we collect is used to:</p>
+          <ul>
+            <li>Understand which features are most popular</li>
+            <li>Improve the performance and usability of the application</li>
+            <li>Fix bugs and compatibility issues across browsers and devices</li>
+            <li>Make informed decisions about future template additions</li>
+          </ul>
+        </div>
+
+        <div className="privacy-section" id="pp-storage">
+          <h2>3. Data Storage & Security</h2>
+          <p>Your resume data exists only in your browser's temporary memory (React state). When you close or refresh the tab, all entered data is cleared. We do not use localStorage, sessionStorage, or any browser database to persist your resume data.</p>
+          <div className="privacy-highlight">
+            Your data never leaves your device. No server-side storage. No databases. No backups of your personal information on our end.
+          </div>
+          <p>The PDF generation is handled entirely client-side using the html2pdf.js library. Your document is created and downloaded directly in your browser without any data being sent to external servers.</p>
+        </div>
+
+        <div className="privacy-section" id="pp-cookies">
+          <h2>4. Cookies & Tracking</h2>
+          <p>We use minimal, privacy-respecting analytics to understand aggregate usage patterns. We do not use:</p>
+          <ul>
+            <li>Advertising cookies or tracking pixels</li>
+            <li>Cross-site tracking technologies</li>
+            <li>Fingerprinting or device identification</li>
+            <li>Third-party advertising networks</li>
+          </ul>
+          <p>You can disable cookies in your browser settings without affecting the core functionality of the resume builder.</p>
+        </div>
+
+        <div className="privacy-section" id="pp-third">
+          <h2>5. Third-Party Services</h2>
+          <p>luckyzResumé uses the following third-party services:</p>
+          <ul>
+            <li><strong>Google Fonts:</strong> Used to load custom typography (Playfair Display, DM Sans, Space Mono). Google may collect standard web request data. See <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank" style={{color:'var(--accent)'}}>Google's Privacy Policy</a>.</li>
+            <li><strong>html2pdf.js via Cloudflare CDN:</strong> Loaded on demand when you click "Download PDF." Cloudflare may log the request. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noreferrer" target="_blank" style={{color:'var(--accent)'}}>Cloudflare's Privacy Policy</a>.</li>
+            <li><strong>Netlify (Hosting):</strong> Our application is hosted on Netlify. Netlify collects standard server access logs. See <a href="https://www.netlify.com/privacy/" rel="noreferrer" target="_blank" style={{color:'var(--accent)'}}>Netlify's Privacy Policy</a>.</li>
+          </ul>
+        </div>
+
+        <div className="privacy-section" id="pp-rights">
+          <h2>6. Your Rights</h2>
+          <p>Since we do not store your personal data on our servers, most traditional data rights (access, erasure, portability) are automatically fulfilled — your data never leaves your browser in the first place.</p>
+          <p>If you have questions about any anonymized analytics data, you may contact us and we will respond within 30 days.</p>
+          <ul>
+            <li><strong>Right to access:</strong> Contact us for any analytics data associated with your session</li>
+            <li><strong>Right to erasure:</strong> Clear your browser cache/cookies to remove any local data</li>
+            <li><strong>Right to opt-out:</strong> Use an ad blocker or privacy browser extension to opt out of analytics</li>
+          </ul>
+        </div>
+
+        <div className="privacy-section" id="pp-children">
+          <h2>7. Children's Privacy</h2>
+          <p>luckyzResumé is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will take steps to delete that information.</p>
+        </div>
+
+        <div className="privacy-section" id="pp-changes">
+          <h2>8. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. We will update the "Last updated" date at the top of this page when we make changes.</p>
+          <p>We encourage you to review this Privacy Policy periodically. Continued use of luckyzResumé after any changes constitutes your acceptance of the updated policy.</p>
+        </div>
+
+        <div className="privacy-section" id="pp-contact">
+          <h2>9. Contact Us</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> elurilawrence.dev@gmail.com</li>
+            <li><strong>Phone:</strong> +91 7382368499</li>
+            <li><strong>Location:</strong> Rajahmundry, Andhra Pradesh, India</li>
+          </ul>
+          <p>We are committed to resolving any privacy concerns and will respond to all legitimate requests within 30 days.</p>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 // ============================================================
 // HEADER
 // ============================================================
@@ -1909,6 +2396,7 @@ function Header({ page, onNav }) {
       <nav className="header-nav">
         <button className={`nav-link${page === 'home' ? ' active' : ''}`} onClick={() => onNav('home')}>Builder</button>
         <button className={`nav-link${page === 'templates' ? ' active' : ''}`} onClick={() => onNav('templates')}>Templates</button>
+        {/* <button className="nav-link" onClick={() => {}}>Tips</button> */}
       </nav>
     </header>
   );
@@ -1917,31 +2405,33 @@ function Header({ page, onNav }) {
 // ============================================================
 // FOOTER
 // ============================================================
-function Footer() {
+function Footer({ onNav }) {
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
           <div className="logo"><span style={{ width: 8, height: 8, background: 'var(--accent)', borderRadius: '50%', display: 'inline-block', marginRight: 6 }}></span>luckyzResumé</div>
-          <p>Build a professional resume in minutes. Choose from modern templates and download as PDF.</p>
+          <p>Build a professional resume in minutes. Choose from 15 modern templates and download as PDF — completely free.</p>
         </div>
         <div className="footer-col">
-          <h4>Product</h4>
-          <p >Resume Builder</p>
-          <p >Templates</p>
-          {/* <a href="#">Resume Tips</a>
-          <a href="#">Cover Letter</a> */}
+          <h4>Navigate</h4>
+          <button className="footer-link-btn" onClick={() => onNav('home')}>Resume Builder</button>
+          <button className="footer-link-btn" onClick={() => onNav('templates')}>Templates</button>
+          <button className="footer-link-btn" onClick={() => onNav('about')}>About Us</button>
+          <button className="footer-link-btn" onClick={() => onNav('contact')}>Contact</button>
+          <button className="footer-link-btn" onClick={() => onNav('privacy')}>Privacy Policy</button>
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          {/* <p>+91 7382368499</p> */}
           <a href="tel:7382368499">+91 7382368499</a>
           <p>elurilawrence.dev@gmail.com</p>
           <p>Rajahmundry, Andhra Pradesh</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} luckyzResumé — Built with ♥ for job seekers everywhere</p>
+        <p>© {new Date().getFullYear()} luckyzResumé — Built with ♥ for job seekers everywhere &nbsp;·&nbsp;
+          <button className="footer-link-btn" style={{display:'inline',padding:0,fontSize:'inherit'}} onClick={() => onNav('privacy')}>Privacy Policy</button>
+        </p>
       </div>
     </footer>
   );
@@ -1954,7 +2444,7 @@ export default function App() {
   const [page, setPage] = useState('home');
   const [data, setData] = useState(initialData);
 
-  const navigate = (p) => setPage(p);
+  const navigate = (p) => { setPage(p); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -1964,29 +2454,49 @@ export default function App() {
       {page === 'home' && (
         <>
           <div className="hero">
-            {/* <div className="hero-badge">✦ Free Resume Builder</div> */}
             <h1>Land Your Dream Job with a <span>Perfect Resume</span></h1>
             <p>Professional templates, real-time preview, and instant PDF download — all in one place.</p>
             <button className="hero-cta" onClick={() => { document.getElementById('form-start')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Start Building Free →
             </button>
             <div className="hero-stats">
-              <div className="stat"><div className="stat-num">50+</div><div className="stat-label">Templates</div></div>
+              <div className="stat"><div className="stat-num">15</div><div className="stat-label">Templates</div></div>
               <div className="stat"><div className="stat-num">PDF</div><div className="stat-label">Instant Export</div></div>
               <div className="stat"><div className="stat-num">100%</div><div className="stat-label">Free</div></div>
             </div>
           </div>
           <div id="form-start">
-            <FormPage data={data} setData={setData} onGenerate={() => setPage('templates')} />
+            <FormPage data={data} setData={setData} onGenerate={() => navigate('templates')} />
           </div>
-          <Footer />
+          <Footer onNav={navigate} />
         </>
       )}
 
       {page === 'templates' && (
         <>
-          <TemplatesPage data={data} onBack={() => setPage('home')} />
-          <Footer />
+          <TemplatesPage data={data} onBack={() => navigate('home')} />
+          <Footer onNav={navigate} />
+        </>
+      )}
+
+      {page === 'about' && (
+        <>
+          <AboutPage onNav={navigate} />
+          <Footer onNav={navigate} />
+        </>
+      )}
+
+      {page === 'contact' && (
+        <>
+          <ContactPage />
+          <Footer onNav={navigate} />
+        </>
+      )}
+
+      {page === 'privacy' && (
+        <>
+          <PrivacyPage />
+          <Footer onNav={navigate} />
         </>
       )}
     </div>

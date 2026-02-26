@@ -719,6 +719,8 @@ const styles = `
   .footer-col h4 { color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.04em; }
   .footer-col p, .footer-col a { font-size: 0.82rem; line-height: 1.8; display: block; color: rgba(255,255,255,0.55); text-decoration: none; }
   .footer-col a:hover { color: white; }
+  .footer-link-btn { background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.82rem; line-height: 1.8; display: block; color: rgba(255,255,255,0.55); text-align: left; padding: 0; }
+  .footer-link-btn:hover { color: white; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.78rem; }
 
   .progress-bar { display: flex; gap: 8px; margin-bottom: 2rem; }
@@ -1795,7 +1797,7 @@ function FormPage({ data, setData, onGenerate }) {
           <button className="generate-btn" onClick={handleGenerate}>
             Generate My Resume →
           </button>
-          <p style={{marginTop:'12px',fontSize:'0.82rem',color:'var(--muted)'}}>Choose a professional template on the next page</p>
+          <p style={{marginTop:'12px',fontSize:'0.82rem',color:'var(--muted)'}}>Choose from 5 professional templates on the next page</p>
         </div>
       </div>
     </div>
@@ -1902,14 +1904,14 @@ function TemplatesPage({ data, onBack }) {
 function Header({ page, onNav }) {
   return (
     <header className="header">
-      <a className="header-logo" onClick={() => onNav('home')} style={{ cursor: 'pointer' }}>
+      <span className="header-logo" onClick={() => onNav('home')} style={{ cursor: 'pointer' }}>
         <span className="logo-dot"></span>
-        luckyzResumé
-      </a>
+        Resumé<span style={{ color: 'var(--accent)' }}>.</span>io
+      </span>
       <nav className="header-nav">
         <button className={`nav-link${page === 'home' ? ' active' : ''}`} onClick={() => onNav('home')}>Builder</button>
         <button className={`nav-link${page === 'templates' ? ' active' : ''}`} onClick={() => onNav('templates')}>Templates</button>
-        {/* <a className="nav-link" href="#">Tips</a> */}
+        <button className="nav-link" onClick={() => {}}>Tips</button>
       </nav>
     </header>
   );
@@ -1923,26 +1925,25 @@ function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <div className="logo"><span style={{ width: 8, height: 8, background: 'var(--accent)', borderRadius: '50%', display: 'inline-block', marginRight: 6 }}></span>luckyzResumé</div>
+          <div className="logo"><span style={{ width: 8, height: 8, background: 'var(--accent)', borderRadius: '50%', display: 'inline-block', marginRight: 6 }}></span>Resumé.io</div>
           <p>Build a professional resume in minutes. Choose from modern templates and download as PDF.</p>
         </div>
         <div className="footer-col">
           <h4>Product</h4>
-          <a href="#">Resume Builder</a>
-          <a href="#">Templates</a>
-          {/* <a href="#">Resume Tips</a>
-          <a href="#">Cover Letter</a> */}
+          <button className="footer-link-btn">Resume Builder</button>
+          <button className="footer-link-btn">Templates</button>
+          <button className="footer-link-btn">Resume Tips</button>
+          <button className="footer-link-btn">Cover Letter</button>
         </div>
         <div className="footer-col">
           <h4>Contact</h4>
-          {/* <p>+91 7382368499</p> */}
-          <a href="tel:7382368499">+91 7382368499</a>
-          <p>elurilawrence.dev@gmail.com</p>
-          <p>Rajahmundry, Andhra Pradesh</p>
+          <p>support@resume.io</p>
+          <p>Kakinada, Andhra Pradesh</p>
+          <p>+91 98765 43210</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} luckyzResumé — Built with ♥ for job seekers everywhere</p>
+        <p>© {new Date().getFullYear()} Resumé.io — Built with ♥ for job seekers everywhere</p>
       </div>
     </footer>
   );
@@ -1965,14 +1966,14 @@ export default function App() {
       {page === 'home' && (
         <>
           <div className="hero">
-            {/* <div className="hero-badge">✦ Free Resume Builder</div> */}
+            <div className="hero-badge">✦ Free Resume Builder</div>
             <h1>Land Your Dream Job with a <span>Perfect Resume</span></h1>
             <p>Professional templates, real-time preview, and instant PDF download — all in one place.</p>
             <button className="hero-cta" onClick={() => { document.getElementById('form-start')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Start Building Free →
             </button>
             <div className="hero-stats">
-              <div className="stat"><div className="stat-num">50+</div><div className="stat-label">Templates</div></div>
+              <div className="stat"><div className="stat-num">5</div><div className="stat-label">Templates</div></div>
               <div className="stat"><div className="stat-num">PDF</div><div className="stat-label">Instant Export</div></div>
               <div className="stat"><div className="stat-num">100%</div><div className="stat-label">Free</div></div>
             </div>

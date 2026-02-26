@@ -1927,8 +1927,8 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h4>Product</h4>
-          <a href="#">Resume Builder</a>
-          <a href="#">Templates</a>
+          <a >Resume Builder</a>
+          <a >Templates</a>
           {/* <a href="#">Resume Tips</a>
           <a href="#">Cover Letter</a> */}
         </div>

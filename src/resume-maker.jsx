@@ -1693,7 +1693,7 @@ function FormPage({ data, setData, onGenerate }) {
                 </div>
                 <div className="form-group">
                   <label className="form-label">Company</label>
-                  <input className="form-input" placeholder="Amaravathi Software" value={exp.company} onChange={e => updateEntry('experience', i, 'company', e.target.value)} />
+                  <input className="form-input" placeholder="Jelebi Software" value={exp.company} onChange={e => updateEntry('experience', i, 'company', e.target.value)} />
                 </div>
               </div>
               <div className="form-row cols-3">
@@ -1769,7 +1769,7 @@ function FormPage({ data, setData, onGenerate }) {
               <div className="form-row cols-2" style={{marginRight:'40px'}}>
                 <div className="form-group">
                   <label className="form-label">Project Name</label>
-                  <input className="form-input" placeholder="Andhra Taxi App" value={proj.name} onChange={e => updateEntry('projects', i, 'name', e.target.value)} />
+                  <input className="form-input" placeholder="Swiggy App" value={proj.name} onChange={e => updateEntry('projects', i, 'name', e.target.value)} />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Link / URL</label>
